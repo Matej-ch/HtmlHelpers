@@ -21,7 +21,7 @@ $service = new HtmlTagRemover($htmlString);
 
 $service->removeTags(['a' => 'href[files]']);
 
-/** remove a tags where href attribute contains `files` and span elements contains class with `test` string */
+/** remove 'a' tags where href attribute contains `files` substring and span elements contains class with `test` string */
 $service->removeTags(['a' => 'href[files]','span' => 'class[test]']);
 ```
 
@@ -40,14 +40,17 @@ _Example_
 ```PHP
 $service = new HtmlFileExtractor($htmlString);
 
-/** return directly from href and src */
+/** return files as array of strings directly from href and src */
 $service->getFiles(['img','a'])
 
 
-/** returns from span elements from class attributes */
+/** return files as array of strings from class attributes of span elements */
 $service->getFiles(['span' => 'class'])
 
 $service->getFiles(['span' => 'class','img'=>'alt'])
 
+/** return files as array of strings from class attributes of span elements, 
+ * where class contains substring 'es' and from alt attribute of image tags
+ */
 $service->getFiles(['span' => 'class[es]','img'=>'alt'])
 ```
