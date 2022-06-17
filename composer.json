@@ -1,7 +1,7 @@
 {
   "name": "matejch/html_helpers",
   "description": "Helper class for removing elements and content, and extracting file paths",
-  "minimum-stability": "stable",
+  "version": "1.0.1",
   "keywords": ["html","file extraction","tag remover"],
   "license": "MIT",
   "authors": [
