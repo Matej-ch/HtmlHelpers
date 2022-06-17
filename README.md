@@ -1,3 +1,5 @@
+![latest_tag](https://badgen.net/github/tag/Matej-ch/HtmlHelpers)
+
 ### Two PHP helper classes for removing html tags and extracting file paths
 
 
