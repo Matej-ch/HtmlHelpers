@@ -2,6 +2,12 @@
 
 ### Two PHP helper classes for removing html tags and extracting file paths
 
+---
+Install in your project
+```
+composer require matejch/html_helpers "^1.0.0"
+```
+---
 
 ### class HtmlTagRemover
 
@@ -56,4 +62,9 @@ $service->getFiles(['span' => 'class','img'=>'alt'])
  * where class contains substring 'es' and from alt attribute of image tags
  */
 $service->getFiles(['span' => 'class[es]','img'=>'alt'])
+```
+---
+Remove package from your project
+```php 
+composer remove matejch/html_helpers
 ```
