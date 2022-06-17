@@ -1,6 +1,5 @@
 <?php
-
-namespace App;
+namespace matejch\html;
 
 class HtmlFileExtractor extends BaseHtmlHelper
 {
@@ -91,10 +90,8 @@ class HtmlFileExtractor extends BaseHtmlHelper
                             if($attr->name === $attrName && $this->str_contains($attr->nodeValue,$attrValue)) {
                                 $fileArray[] =  $attr->nodeValue;
                             }
-                        } else {
-                            if(!empty($attr->nodeValue) && $attr->name === $tags[$tag]) {
-                                $fileArray[] = $attr->nodeValue;
-                            }
+                        } elseif(!empty($attr->nodeValue) && $attr->name === $tags[$tag]) {
+                            $fileArray[] = $attr->nodeValue;
                         }
                     }
                 }

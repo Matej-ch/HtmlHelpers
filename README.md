@@ -1,21 +1,21 @@
-### Two helper classes for working with html
+### Two PHP helper classes for removing html tags and extracting file paths
 
 
 ### class HtmlTagRemover
 
-With this class you can remove tags based on name 
+With class ``HtmlTagRemover`` you can remove specified html tags and its content from html string
 
-_Example_
+_Example: remove tags based on name_
+
 
 ```php
 
 $service = new HtmlTagRemover($htmlString);
 service->removeTags(['a','img']);
 ```
+---
 
-You can remove tags based on value of attribute
-
-_Example_
+_Example: remove tags based on content of attribute_
 ```php
 $service = new HtmlTagRemover($htmlString);
 
@@ -25,25 +25,26 @@ $service->removeTags(['a' => 'href[files]']);
 $service->removeTags(['a' => 'href[files]','span' => 'class[test]']);
 ```
 
+---
 
 ### class HtmlFileExtractor
 
-I built this class, because I needed to extract file sources from html before sending email
+I created this class, because I needed to extract file paths from html before sending email, and add the as attachment
 
-And add it to attached files
-
-This class can return source from _img_ or _a_ tags
+This class can return source from _img_ or _a_ tags automatically
 
 But also from custom tags or attributes
 
-_Example_
+_Example: get file paths from **img** and **a** tag_
 ```PHP
 $service = new HtmlFileExtractor($htmlString);
 
 /** return files as array of strings directly from href and src */
 $service->getFiles(['img','a'])
-
-
+```
+---
+_Example: get file paths other tags or specified attributes_
+```PHP
 /** return files as array of strings from class attributes of span elements */
 $service->getFiles(['span' => 'class'])
 

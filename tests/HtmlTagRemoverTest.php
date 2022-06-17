@@ -1,8 +1,8 @@
 <?php
 
-namespace tests;
+namespace matejch\html\tests;
 
-use App\HtmlTagRemover;
+use matejch\html\HtmlTagRemover;
 use PHPUnit\Framework\TestCase;
 
 class HtmlTagRemoverTest extends TestCase

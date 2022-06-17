@@ -1,9 +1,9 @@
 <?php
 
 
-namespace tests;
+namespace matejch\html\tests;
 
-use App\HtmlFileExtractor;
+use matejch\html\HtmlFileExtractor;
 use PHPUnit\Framework\TestCase;
 
 class HtmlFileExtractorTest extends TestCase

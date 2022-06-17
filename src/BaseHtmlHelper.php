@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace matejch\html;
 
 class BaseHtmlHelper
 {
@@ -32,12 +32,8 @@ class BaseHtmlHelper
      * the array to be treated as associative.
      * @return bool whether the array is associative
      */
-    protected function isAssociative($array, $allStrings = true)
+    protected function isAssociative(array $array,bool $allStrings = true): bool
     {
-        if (!is_array($array) || empty($array)) {
-            return false;
-        }
-
         if ($allStrings) {
             foreach ($array as $key => $value) {
                 if (!is_string($key)) {

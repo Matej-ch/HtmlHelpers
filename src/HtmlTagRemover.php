@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace matejch\html;
 
 
 class HtmlTagRemover extends BaseHtmlHelper
@@ -26,7 +26,7 @@ class HtmlTagRemover extends BaseHtmlHelper
      *
      * @param string|array $tags
      */
-    public function removeTags($tags)
+    public function removeTags($tags): void
     {
         if(is_string($tags)) {
             $tags = [$tags];
